@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    background: url('tu-imagen.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+.header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #d4a017;
+}
+
+.menu p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-button {
+    background-color: #d4a017;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #f5b041;
+    transform: scale(1.1);
+}
+
+/* Info Sections */
+.info-section {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+
+.info-section:target {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}

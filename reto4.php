@@ -1,22 +1,23 @@
 <?php
 session_start();
 
-// Verifica si la sesión está iniciada
-if (!isset($_SESSION['reto1_superado'])) {
-    $_SESSION['reto1_superado'] = false;
+// Evita que accedan sin haber pasado el reto 3
+if (!isset($_SESSION['reto4_superado']) || $_SESSION['reto4_superado'] !== true) {
+    header("Location: trampas.php");
+    exit();
 }
 
 $error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $respuesta = strtolower(trim(preg_replace('/\s+/', ' ', $_POST['respuesta'])));
+    $respuesta = strtolower(trim($_POST['respuesta']));
 
-    $correctas = ["messi", "lionel messi", "leo messi"];
+    $correctas = ["real madrid", "madrid", "real madrid cf"];
     if (in_array($respuesta, $correctas)) {
-        $_SESSION['reto1_superado'] = true;
-        header("Location: reto2.php");
+        $_SESSION['reto4_superado'] = true;
+        header("Location: paginafinal.html");
         exit();
     } else {
-        $error = "Pista: Es el jugador con más Balón de Oro.";
+        $error = "Pista: Es el equipo con más Champions League ganadas.";
     }
 }
 ?>
@@ -26,13 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto 1</title>
+    <title>Reto 4</title>
     <link rel="stylesheet" href="css/retos.css">
 </head>
 <body>
     <div class="container">
-        <h2>Reto 1</h2>
-        <p>¿Quién es considerado el mejor futbolista de todos los tiempos?</p>
+        <h2>Reto 4</h2>
+        <p>¿Qué equipo ha ganado más títulos de la UEFA Champions League?</p>
         <form method="post">
             <input type="text" name="respuesta" required>
             <button type="submit">Enviar</button>

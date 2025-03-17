@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafío Futbolístico</title>
-    
+    <link rel="stylesheet" href="css/paginas_principales.css">  <!-- Enlaza el archivo CSS -->
 </head>
 <body>
     <header>
@@ -14,10 +14,8 @@
         <section>
             <h2>¡Bienvenido al juego!</h2>
             <p>¿Estás listo para demostrar tus conocimientos de fútbol?</p>
-            <div >
+            <div>
                 <a href="./reto1.php">Comenzar Partida</a>
-                <a href="#instrucciones">Instrucciones</a>
-                <a href="#creditos">Créditos</a>
             </div>
             <section id="instrucciones">
                 <h3>Instrucciones</h3>
@@ -38,4 +36,3 @@
     </footer>
 </body>
 </html>
-
